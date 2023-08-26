@@ -1,0 +1,23 @@
+[Unit]
+Description=SMA Solar Inverter Reporter Client/Daemon
+Documentation=
+After=network.target mosquitto.service network-online.target
+Wants=network-online.target
+Requires=network.target
+
+[Service]
+Type=notify
+User=daemon
+Group=daemon
+WorkingDirectory=/opt/sma-reporter/
+ExecStart=/usr/bin/python3 -u /opt/sma-reporter/smainv-reporter.py --config /opt/sma-reporter
+StandardOutput=null
+#StandardOutput=syslog
+#SyslogIdentifier=ISPliDet
+StandardError=journal
+Environment=PYTHONUNBUFFERED=1
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

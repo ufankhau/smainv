@@ -257,7 +257,7 @@ def get_data_from_sma_inverter():
         if "ETotal" in curr_line:
             inv_data["etotal"] = float(curr_value.strip("kWh"))
         if "Operation Time" in curr_line:
-            inv_data["operating_time"] = float(curr_value).strip("h")
+            inv_data["operating_time"] = float(curr_value.strip("h"))
         if "Feed-In Time" in curr_line:
             inv_data["feedin_time"] = float(curr_value.strip("h"))
         if "Grid Freq." in curr_line:

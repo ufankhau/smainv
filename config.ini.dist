@@ -1,5 +1,5 @@
 # Configuration file for smainv-reporter.py
-# Source: https://github.com/ufankhau/sma-reporter
+# Source: https://github.com/ufankhau/smainv
 #
 # Uncomment and adapt settings as needed.
 # Some settings can be configured by environment variables.
@@ -7,11 +7,11 @@
 
 
 [LOG]
-# Enable logging to file sma-em.log in the directory of the application (Default: False)
+# Enable logging to file smainv-reporter.log in the directory of the application (Default: False)
 #log_to_file_enabled = True
-# Log filename (Default: sma-em.log in application directory)
+# Log filename (Default: smainv-reporter.log in application directory)
 # Important: user daemon needs writting access to file!
-#log_filename = sma-em.log
+#log_filename = smainv-reporter.log
 # mode to access the log file: a(ppend) existing file or w(rite) new file (Default: a)
 #file_mode = a
 # Set file logging level ("DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL") (Default: WARNING)
@@ -26,7 +26,7 @@
 # Enabel or disable an endless execution loop [Default: true]
 #enabled = true
 
-# This script reports values from the SMA Inverter at a fixed internal in minutes [1-10], [Default: 2]
+# This script reports values from the SMA Solar Inverter at a fixed internal in minutes [1-10], [Default: 2]
 #interval_in_minutes = 2
 
 
@@ -50,8 +50,8 @@
 # The MQTT base topic under which to publish the Raspberry Pi device data topics.
 #base_topic = home/nodes
 
-# The MQTT name for the SMA Energy Meter as a device
-#device_name = smaem
+# The MQTT name for the SMA Solar Inverter as a device
+#device_name = smainv
 
 # The MQTT broker authentification credentials (Default: no authentication)
 # Will also read from MQTT_USERNAME and MQTT_PASSWORD environment variables

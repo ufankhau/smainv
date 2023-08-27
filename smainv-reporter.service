@@ -1,6 +1,6 @@
 [Unit]
 Description=SMA Solar Inverter Reporter Client/Daemon
-Documentation=
+Documentation=https://github.com/ufankhau/smainv
 After=network.target mosquitto.service network-online.target
 Wants=network-online.target
 Requires=network.target
@@ -9,11 +9,9 @@ Requires=network.target
 Type=notify
 User=daemon
 Group=daemon
-WorkingDirectory=/opt/sma-reporter/
-ExecStart=/usr/bin/python3 -u /opt/sma-reporter/smainv-reporter.py --config /opt/sma-reporter
+WorkingDirectory=/opt/smainv/
+ExecStart=/usr/bin/python3 -u /opt/smainv/smainv-reporter.py --config /opt/smainv
 StandardOutput=null
-#StandardOutput=syslog
-#SyslogIdentifier=ISPliDet
 StandardError=journal
 Environment=PYTHONUNBUFFERED=1
 Restart=always

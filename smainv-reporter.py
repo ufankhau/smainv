@@ -763,7 +763,7 @@ for [sensor, params] in detectorValues.items():
             "val_tpl"
         ] = f"{{{{ value_json.{LDS_PAYLOAD_NAME}.{params['json_value']} }}}}"
 
-    payload["~"] = base_topic
+    payload["~"] = sensor_base_topic
     payload["avty_t"] = activity_topic
     payload["pl_avail"] = lwt_online_val
     payload["pl_not_avail"] = lwt_offline_val

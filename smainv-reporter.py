@@ -266,7 +266,7 @@ def get_data_from_sma_inverter():
             inv_data["ac_total_p"] = float(
                 curr_value.strip(" kW -Calculated Pac").strip()
             )
-        if "Calculated total Pdc" in curr_line:
+        if "Calculated Total Pdc" in curr_line:
             inv_data["dc_total_p"] = float(
                 curr_value.strip(" kW -Calculated Pdc").strip()
             )

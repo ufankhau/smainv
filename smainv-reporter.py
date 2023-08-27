@@ -430,7 +430,7 @@ def send_status(timestamp, _):
     sma_invdata["Inverter Power Out (AC)"] = invdata["ac_total_p"]
     sma_invdata["Inverter Power In (DC)"] = invdata["dc_total_p"]
     sma_invdata["Grid Feed-In Time"] = invdata["feedin_time"]
-    sma_invdata["Grid Frequency"] = invdata["frequency"]
+    sma_invdata["Grid Frequency"] = invdata["grid_frequency"]
     sma_invdata["Inverter Efficieny"] = invdata["efficiency"]
     sma_invdata["Inverter Running Time"] = invdata["operating_time"]
     sma_invdata["Inverter IP"] = invdata["ip"]

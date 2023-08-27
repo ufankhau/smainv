@@ -242,8 +242,8 @@ def get_data_from_sma_inverter():
             inv_data["sunrise"] = f"{curr_value}:{line_parts[2].strip()}"
         if "sunset" in curr_line:
             inv_data["sunset"] = f"{curr_value}:{line_parts[2].strip()}"
-        if "Serial number" in curr_line:
-            inv_data["serial_number"] = curr_value
+        if "Device Name" in curr_line:
+            inv_data["serial_number"] = line_parts[2].strip()
         if "Device Type" in curr_line:
             inv_data["device_type"] = curr_value
         if "Software Version" in curr_line:
@@ -613,7 +613,7 @@ start_alive_timer()
 #  ********************************************************
 #  get unique serial number of the SMA Solar Inverter to create uniqID
 invdata = get_data_from_sma_inverter()
-serial = str(invdata["serial_number"])
+serial = invdata["serial_number"]
 uniqID = f"SMA-{serial[:5]}INV{serial[5:]}"
 log.debug(f"uniqID: {uniqID}")
 

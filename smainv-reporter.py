@@ -273,9 +273,9 @@ def get_data_from_sma_inverter():
         if "Efficiency" in curr_line:
             inv_data["efficiency"] = float(curr_value.strip("%"))
         if "String 1" in curr_line:
-            inv_data["dc_string1"] = get_dc_string_params(line_parts)
+            inv_data["MPPT 1"] = get_dc_string_params(line_parts)
         if "String 2" in curr_line:
-            inv_data["dc_string2"] = get_dc_string_params(line_parts)
+            inv_data["MPPT 2"] = get_dc_string_params(line_parts)
         if "Phase 1" in curr_line:
             inv_data["ac_phase1"] = get_ac_phase_params(line_parts)
         if "Phase 2" in curr_line:

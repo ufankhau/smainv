@@ -421,28 +421,28 @@ def send_status(timestamp, _):
     invdata = get_data_from_sma_inverter()
     sma_invdata = OrderedDict()
     sma_invdata["Timestamp"] = timestamp.astimezone().replace(microsecond=0).isoformat()
-    sma_invdata["Device Type"] = invdata["device_type"]
+    sma_invdata["Device_Type"] = invdata["device_type"]
     sma_invdata["Sunrise"] = invdata["sunrise"]
     sma_invdata["Sunset"] = invdata["sunset"]
-    sma_invdata["Temperature Inverter"] = invdata["temperature"]
-    sma_invdata["Energy Today"] = invdata["etoday"]
-    sma_invdata["Energy Total"] = invdata["etotal"]
-    sma_invdata["Inverter Power Out (AC)"] = invdata["ac_total_p"]
-    sma_invdata["Inverter Power In (DC)"] = invdata["dc_total_p"]
-    sma_invdata["Grid Feed-In Time"] = invdata["feedin_time"]
-    sma_invdata["Grid Frequency"] = invdata["grid_frequency"]
-    sma_invdata["Inverter Efficieny"] = invdata["efficiency"]
-    sma_invdata["Inverter Running Time"] = invdata["operating_time"]
-    sma_invdata["Inverter IP"] = invdata["ip"]
+    sma_invdata["Temperature_Inverter"] = invdata["temperature"]
+    sma_invdata["Energy_Today"] = invdata["etoday"]
+    sma_invdata["Energy_Total"] = invdata["etotal"]
+    sma_invdata["Inverter_Power_Out_(AC)"] = invdata["ac_total_p"]
+    sma_invdata["Inverter_Power_In_(DC)"] = invdata["dc_total_p"]
+    sma_invdata["Grid_Feed-In_Time"] = invdata["feedin_time"]
+    sma_invdata["Grid_Frequency"] = invdata["grid_frequency"]
+    sma_invdata["Inverter_Efficieny"] = invdata["efficiency"]
+    sma_invdata["Inverter_Running_Time"] = invdata["operating_time"]
+    sma_invdata["Inverter_IP"] = invdata["ip"]
     sma_invdata["Firmware"] = invdata["software_version"]
-    sma_invdata["Reporter"] = script_name.replace(".py", "")
-    sma_invdata["Reporting Interval"] = f"{reporting_interval_in_minutes} min"
-    sma_invdata["Grid Connection"] = invdata["grid_relay"]
-    sma_invdata["DC String 1"] = invdata["dc_string1"]
-    sma_invdata["DC String 2"] = invdata["dc_string2"]
-    sma_invdata["AC Phase 1"] = invdata["ac_phase1"]
-    sma_invdata["AC Phase 2"] = invdata["ac_phase2"]
-    sma_invdata["AC Phase 3"] = invdata["ac_phase3"]
+    sma_invdata["Reporter_Version"] = script_info.replace(".py", "")
+    sma_invdata["Reporting_Interval"] = f"{reporting_interval_in_minutes} min"
+    sma_invdata["Grid_Connection"] = invdata["grid_relay"]
+    sma_invdata["DC_String_1"] = invdata["dc_string1"]
+    sma_invdata["DC_String_2"] = invdata["dc_string2"]
+    sma_invdata["AC_Phase_1"] = invdata["ac_phase1"]
+    sma_invdata["AC_Phase_2"] = invdata["ac_phase2"]
+    sma_invdata["AC_Phase_3"] = invdata["ac_phase3"]
 
     sma_inv_top_dict = OrderedDict()
     sma_inv_top_dict[LDS_PAYLOAD_NAME] = sma_invdata
@@ -650,7 +650,7 @@ detectorValues = OrderedDict(
                 title="SMA Inverter Temperature",
                 device_class="temperature",
                 unit="°C",
-                json_value="Temperature Inverter",
+                json_value="Temperature_Inverter",
                 icon="mdi:thermometer",
             ),
         ),
@@ -660,7 +660,7 @@ detectorValues = OrderedDict(
                 topic_category="sensor",
                 title="SMA Inverter Energy Today",
                 device_class="energy",
-                json_value="Energy Today",
+                json_value="Energy_Today",
                 unit="kWh",
                 icon="mdi:counter",
             ),
@@ -672,7 +672,7 @@ detectorValues = OrderedDict(
                 title="SMA Inverter Energy Total",
                 device_class="energy",
                 state_class="total",
-                json_value="Energy Total",
+                json_value="Energy_Total",
                 unit="kWh",
                 icon="mdi:counter",
             ),
@@ -683,7 +683,7 @@ detectorValues = OrderedDict(
                 topic_category="sensor",
                 title="SMA Inverter AC Power out",
                 device_class="power",
-                json_value="Inverter Power Out (AC)",
+                json_value="Inverter_Power_Out_(AC)",
                 unit="kW",
                 icon="mdi:solar-power",
             ),
@@ -694,7 +694,7 @@ detectorValues = OrderedDict(
                 topic_category="sensor",
                 title="SMA Inverter DC Power in",
                 device_class="power",
-                json_value="Inverter Power In (DC)",
+                json_value="Inverter_Power_In_(DC)",
                 unit="kW",
                 icon="mdi:solar-power",
             ),
@@ -704,7 +704,7 @@ detectorValues = OrderedDict(
             dict(
                 topic_category="sensor",
                 title="SMA Inverter Efficiency",
-                json_value="Inverter Efficiency",
+                json_value="Inverter_Efficiency",
                 unit="%",
                 icon="mdi:solar-power",
             ),
@@ -715,7 +715,7 @@ detectorValues = OrderedDict(
                 topic_category="sensor",
                 title="Grid Frequency",
                 device_class="frequency",
-                json_value="Grid Frequency",
+                json_value="Grid_Frequency",
                 unit="Hz",
                 icon="mdi:transmission-tower",
             ),
